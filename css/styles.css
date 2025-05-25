@@ -1,0 +1,407 @@
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+/* ANIMATION */
+
+/* INTRO ANIMATION */
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* FONDO NEGRO TOTAL */
+body, html {
+  background-color: #000;
+  color: white;
+  font-family: sans-serif;
+  min-height: 100vh;
+}
+
+/* TÍTULO CENTRADO */
+.title-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 30vh;
+  text-align: center;
+}
+
+#animatedTitle {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  color: white;
+}
+
+/* EFECTO ROTACIÓN */
+.letter {
+  display: inline-block;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  animation: girarX 1s ease forwards;
+}
+
+@keyframes girarX {
+  from { transform: rotateX(0deg); }
+  to   { transform: rotateX(1080deg); }
+}
+
+/* EFECTO CURSOR */
+.typing-cursor::after {
+  content: '|';
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* GRID RESPONSIVE */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* CARDS */
+.card {
+  background-color: white;
+  color: black;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* END ANIMATION */
+
+/* VARIABLES CSS */
+:root {
+    --font1: "Nunito Sans", sans-serif;
+    --dark-blue: #073b4c;
+    --turquoise: #118ab2;
+    --green: #06d6a0;
+    --yellow: #ffd166;
+    --deep-pink: #ef476f;
+    --black: #0d0b0b;
+    --white: #f1f1f1;
+}
+/* RESET CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h2, h3, h4 {
+    font-family: var(--font1);
+    text-transform: uppercase;
+}
+
+p, a {
+    font-family: var(--font1);
+}
+
+body {
+    background-color: var(--dark);
+    width: 100%;
+    height: 100vh;
+}
+/* CONTAINER */
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+/* CARD */
+
+.card {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--white);
+}
+/* CARD DEV */
+
+.card-developer {
+    grid-column: span 2;
+    display: flex;
+    align-items: flex-end;
+    gap: 80px;
+    background-color: var(--green);
+    padding: 35px;
+}
+
+.card-developer__profile {
+    max-width: 40%;
+}
+.card-developer__profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--turquoise);
+    padding: 10px;
+    background-color: var(--white);
+    margin-bottom: 20px;
+}
+
+.card-developer__profile h2{
+    font-size: 2em;
+    color: var(--black);
+}
+
+.card-developer__info {
+    max-width: 60%;
+}
+
+.card-developer__info p{
+    font-size: 1.5em;
+    line-height: 1.5;
+    color: var(--black);
+    text-wrap: balance;
+}
+
+/* CARD CV */
+
+.card-cv {
+    position: relative;
+    background-color: var(--yellow);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.card-cv a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 30px;
+    z-index: 1;
+    transition: 0.4s;
+}
+
+.card-cv a:hover {
+    letter-spacing: 2px;
+}
+
+.card-cv img {
+    position: absolute;
+    opacity: 0.1;
+    width: 350px;
+    height: auto;
+}
+
+.card-cv h3 {
+    font-size: clamp(1em, 3vw, 3em);
+    text-align: left;
+    margin-bottom: 20px;
+    color: var(--black);
+}
+
+/* CARD CONTACT */
+
+.card-contact {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: var(--deep-pink);
+    grid-row: span 2;
+}
+
+.card-contact img {
+    position: relative;
+    top: 40px;
+    left: 0;
+    width: 300px;
+    height: auto;
+    opacity: 0.2;
+}
+
+.card-contact h2 {
+    font-size: clamp(1em, 3vw, 3em);
+    text-align: left;
+    margin-bottom: 30px;
+    color: var(--black);
+}
+
+.card-contact__rrss {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.card-contact__rrss a {
+    font-size: 2.5em;
+    transition: 0.4s;
+    color: var(--black);
+}
+
+.card-contact__rrss a:hover {
+    color: var(--white);
+
+}
+/* CARD SKILLS */
+
+.card-skills {
+    background-color: var(--turquoise);
+    text-align: center;
+}
+
+.card-skills__techs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.card-skills__techs i {
+    font-size: 3em;
+    color: var(--dark-blue);
+}
+
+/* CARD PROJECTS */
+
+.card-projects {
+    background-color: var(--green);
+    text-align: center;
+}
+
+.card-projects__links a {
+    display: block;
+    margin: 10px 0;
+    text-decoration: none;
+    color: var(--black);
+    font-size: 1.2em;
+}
+
+.card-projects__links a i {
+    margin-right: 8px;
+}
+
+
+/* BREAKPOINTS */
+
+@media (max-width: 1200px){
+    .card-skills {
+        grid-column: span 2;
+    }
+
+    .card-skills__techs i {
+        font-size: 3em;
+    }
+
+    .card-contact img {
+        top: 0;
+    }
+}
+
+/* LAPTOPS */
+@media screen and (max-width: 992px) {
+    .container{
+        place-content: unset;
+    }
+
+    .card-cv{
+        grid-row: span 2;
+    }
+
+    .card-cv img {
+        width: 150px;
+        right: 0;
+    }
+
+    .card-contact img{
+        width: 150px;
+        left: 60%;
+    }
+}
+
+/* TABLETS */
+
+@media screen and (max-width: 768px) {
+    .card {
+        grid-column: 1;
+    }
+
+    .card-cv img {
+        width: 15%;
+        right: 5%;
+    }
+
+    .card-contact {
+        order: 1;
+    }
+
+    .card-contact img {
+        width: 20%;
+        left: 75%;
+    }
+
+}
+
+/* CELULARES */
+
+@media screen and (max-width: 400px) {
+    .container {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .card-developer {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 30px;
+        padding: 20px;
+    }
+
+    .card-developer__profile,
+    .card-developer__info {
+        max-width: 100%;
+    }
+
+    .card-developer__profile h2{
+        font-size: 1.5em;
+    }
+
+    .card-developer__info p {
+        font-size: 1.2em;
+    }
+
+    .card-contact img {
+        width: 20%;
+        left: 75%;
+        top: 25%;
+    }
+
+    .card-skills__techs i {
+        font-size: 2em;
+    }
+
+    .card-projects__links a {
+        font-size: 1em;
+        justify-content: space-between;
+    }
+
+    .card-projects__links a i {
+        font-size: 1.5em;
+    }
+}
