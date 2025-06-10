@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const span = document.createElement('span');
     span.textContent = char;
     span.classList.add('letter');
-    span.style.animationDelay = `${i * 0.5}s`;
+    span.style.animationDelay = `${i * 0.3}s`;
     h1.appendChild(span);
   });
 
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function animateTitleText() {
     if (idx < coreano.length) {
       titleTag.textContent += coreano[idx++];
-      setTimeout(animateTitleText, 500);
+      setTimeout(animateTitleText, 300);
     } else {
       setTimeout(() => {
         // Paso 2: cambiar a español con typing
